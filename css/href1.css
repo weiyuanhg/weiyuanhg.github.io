@@ -1,0 +1,176 @@
+@charset "gb2312";
+/* CSS Document */
+
+<style>
+
+
+.font1 {
+	font-size: 12px;
+	line-height: 20px;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-variant: normal;
+}
+.font2 {
+	font-size: 12px;
+	line-height: 24px;
+	color: #444444;
+	letter-spacing: normal;
+
+
+}
+.font3 {
+	font-size: 12px;
+	line-height: 22px;
+	color: #444444;
+	letter-spacing: normal;
+
+
+
+}
+.font4 {
+	font-size: 12px;
+	line-height: 27px;
+	color: #444444;
+	font-weight: normal;
+	font-variant: normal;
+	letter-spacing: normal;
+
+
+	}
+.font5 {
+	font-size: 12px;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	letter-spacing: normal;
+
+}
+.font6{
+	font-size: 14px;
+	line-height: 26px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	word-spacing: 1px;
+
+
+
+}
+.font7{
+	font-size: 14px;
+	line-height: 25px;
+	color: #000000;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+}
+.font8{
+	font-size: 12px;
+	line-height: 24px;
+	color: #444444;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	letter-spacing: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	color: #009EC6;
+	background-color: #FFFFFF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+a:link {
+	color: #444444;
+	text-decoration: none;
+}
+a:visited {
+	color: #444444;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+a:active {
+	color: #FF6600;
+	text-decoration: none;
+}
+a.1:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.1:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.1:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.1:active {
+	color: #FFFFCC;
+	text-decoration: none;
+}
+
+
+</style>
+.pp2 {
+
+	font-size: 12px;
+	line-height: 22px;
+	color: #000000;
+	letter-spacing: 1pt;
+}
+.pp2 {
+
+	font-size: 12px;
+	line-height: 22px;
+	color: #000000;
+	letter-spacing: 1pt;
+}
+/* Tail CSS Document Begin */
+a.zzb07link{
+	font-size: 12px;
+	text-decoration:none;
+	color: #4444444;
+	line-height: 22px;
+
+}
+ a.zzb07link:hover {
+ text-decoration: underline;
+ color: #444444;
+}
+.zzb07tail
+{
+	font-size:12px;
+	color:#444444;
+	line-height: 20px;
+
+}
+/* Tail CSS Document end*/

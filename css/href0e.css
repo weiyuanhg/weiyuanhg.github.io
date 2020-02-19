@@ -1,0 +1,17 @@
+*{ }
+body{
+background-color: #FFFFFF;
+}
+
+.c{ clear:both; height:1px; overflow: hidden; background:#ffffff}
+
+
+#menu a{
+	width:107px;
+	line-height:41px;
+	display:block;
+	color:#ffffff;
+	font-size:13px;
+}
+#menu a:link,#menu a:visited{color:#033451;background:;text-decoration: none;}
+#menu a:hover,#menu a:active{ color:#ffffff;font-size: 13px; background:url(../images/index_02_02.gif)}

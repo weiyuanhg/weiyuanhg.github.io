@@ -1,0 +1,178 @@
+@charset "gb2312";
+/* CSS Document */
+
+<style>
+
+
+.font1 {
+	font-size: 12px;
+	line-height: 20px;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-variant: normal;
+}
+.font2 {
+	font-size: 12px;
+	line-height: 22px;
+	color: #444444;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+
+
+}
+.font3 {
+	font-size: 12px;
+	line-height: 21px;
+	color: #444444;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+
+
+}
+.font4 {
+	font-size: 12px;
+	line-height: 20px;
+	color: #444444;
+	font-weight: normal;
+	font-variant: normal;
+	letter-spacing: normal;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+	}
+.font5 {
+	font-size: 12px;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	word-spacing: 1px;
+	letter-spacing: 0px;
+
+
+
+
+
+}
+.font6{
+	font-size: 13px;
+	line-height: 24px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	letter-spacing: 0px;
+
+
+
+
+
+}
+.font7{
+	font-size: 13px;
+	line-height: 26px;
+	color: #000000;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+}
+.font8{
+	font-size: 11px;
+	line-height: 12px;
+	color: #595959;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+
+
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	color: #009EC6;
+	background-color: #F9F9FB;
+
+
+
+
+
+
+
+
+
+}
+a:link {
+	color: #444444;
+	text-decoration: none;
+
+}
+a:visited {
+	color: #444444;
+	text-decoration: none;
+}
+a:hover {
+	color: #E30000;
+	text-decoration: underline;
+}
+a:active {
+	color: #21CBBA;
+	text-decoration: underline;
+}
+a.1:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.1:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.1:hover {
+	color: #FFFFCC;
+	text-decoration: none;
+}
+a.1:active {
+	color: #FF99CC;
+	text-decoration: none;
+}
+	/* Tail CSS Document Begin */
+a.zzb07link{
+	font-size: 12px;
+	text-decoration:none;
+	color: #444444;
+	line-height: 22px;
+
+
+}
+ a.zzb07link:hover {
+	text-decoration: underline;
+	color: #444444;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-style: normal;
+	line-height: 22px;
+	font-size: 12px;
+
+
+
+}
+.zzb07tail
+{
+	font-size:12px;
+	font-family:"Arial", "Helvetica", "sans-serif";
+	color:#444444;
+	line-height: 22px;
+	font-style: normal;
+
+
+
+}
+/* Tail CSS Document end*/
+
+</style>
