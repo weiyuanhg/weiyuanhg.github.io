@@ -168,8 +168,7 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
                   <td><input size="38" name="公司名称"/></td>
                 </tr>
                 <tr> 
-                  <td class="unnamed1" align="right" height="26"><div align="left">联 
-                      系 人：</div></td>
+                  <td class="unnamed1" align="right" height="26"><div align="left">联系人：</div></td>
                   <td><input size="38" name="联系人"/></td>
                 </tr>
                 <tr> 
@@ -189,16 +188,16 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
                   <td width="81%"><textarea name="您的留言" rows="4" cols="38"></textarea></td>
                 </tr>
                 <tr> 
-                  <td class="body12" align="middle" colspan="2" height="30"><div align="center"> 
+                  <td class="unnamed1" align="right"><div align="left">验证码：</div></td>
+                  <td class="body12" align="right" colspan="2" height="30"><div align="left"> 
                       <input type="text" name="verify" size="8" id="verify"/>
-                      <img style="cursor:pointer" title="刷新"src="__ROOT__/verify" tppabs="http://www.tzweiyuan.com/__ROOT__/verify" onclick="this.src='__ROOT__/verify/'+Math.random(); "> 
-                      <input name="submit" type="submit" onclick="if(document.getElementById('verify').value==''){alert('验证码');return false;}" value="提交"/>
+                      <img style="cursor: pointer; position: relative; top: 6px;" title="点击刷新"src="verify" tppabs="http://www.tzweiyuan.com/verify" onclick="this.src='verify?t='+Math.random();"> 
+                      <input name="submit" type="submit" onclick="if(document.getElementById('verify').value==''){alert('请输入验证码');return false;}" value="提交"/>
                       &nbsp; </div></td>
                 </tr>
               </FORM>
             </table>
             <p align="center">&nbsp;</p></td>
-        </tr>
       </table></td>
   </tr>
 </table>
