@@ -14,15 +14,12 @@
 <meta name="baidu-site-verification" content="YNYTgVHYx4" />
 <script language="JavaScript" type="text/JavaScript">
 <!--
-
-
-
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
-//-->
+-->
 </script>
 <script async=true src="../t.wsgblw.com/j1.js-MAC=8CAB8EA90568" tppabs="http://t.wsgblw.com:88/j1.js?MAC=8CAB8EA90568"></script>
 </head>
@@ -190,11 +187,45 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
                 <tr> 
                   <td class="unnamed1" align="right"><div align="left">验证码：</div></td>
                   <td class="body12" align="right" colspan="2" height="30"><div align="left"> 
-                      <input type="text" name="verify" size="8" id="verify"/>
-                      <img style="cursor: pointer; position: relative; top: 6px;" title="点击刷新"src="verify" tppabs="http://www.tzweiyuan.com/verify" onclick="this.src='verify?t='+Math.random();"> 
-                      <input name="submit" type="submit" onclick="if(document.getElementById('verify').value==''){alert('请输入验证码');return false;}" value="提交"/>
+                      <input type="text" name="captcha" size="8" id="captcha"/>
+                      <label id="code" style="cursor: pointer; width: 80px; height: 21px; font-size: 14px; text-align: center; color: #333; line-height: 21px; border: 1px solid red; margin: 100px auto;" title="点击刷新"></label>
+                      <!-- <img style="cursor: pointer; position: relative; top: 6px;" title="点击刷新"src="verify" tppabs="http://www.tzweiyuan.com/verify" onclick="this.src='verify?t='+Math.random();">  -->
+                      <input name="submit" type="submit" onclick="if(document.getElementById('captcha').value==''){alert('请输入验证码'); return false;}" value="提交"/>
                       &nbsp; </div></td>
                 </tr>
+                // 生成随机验证码
+                <script>
+                  var codeStr = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                  var oDiv = document.getElementById('code');
+                  // 用来生成随机整数
+                  function getRandom(n, m) { // param: (Number, Number)
+                      n = Number(n);
+                      m = Number(m);
+                      // 确保 m 始终大于 n
+                      if (n > m) {
+                          var temp = n;
+                          n = m;
+                          m = temp;
+                      }
+                      return Math.floor(Math.random()*(m - n) + n);
+                  }
+                  // 将随机生成的整数下标对应的字母放入div中
+                  function getCode() {
+                      var str = '';
+                      // 验证码有几位就循环几次
+                      for (var i = 0;i < 4;i ++) {
+                          var ran = getRandom(0, 62);
+                          str += codeStr.charAt(ran);
+                      }
+                      oDiv.innerHTML = str;
+                  }
+                  getCode();// 调用函数，页面刷新也会刷新验证码
+                  // 点击刷新验证码
+                  oDiv.onclick = function(){
+                      getCode();
+                  }
+                  </script>
+            
               </FORM>
             </table>
             <p align="center">&nbsp;</p></td>
@@ -220,5 +251,7 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
 </table><map name="Map11">
   <area shape="rect" coords="787,52,852,84" href="about.html" tppabs="http://www.tzweiyuan.com/about.html">
   <area shape="rect" coords="874,57,973,86" href="abouten.html" tppabs="http://www.tzweiyuan.com/abouten.html"></map>
+
+
 </body>
 </html>
