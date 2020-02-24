@@ -143,38 +143,48 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
         <tr> 
           <td width="749" valign="top"  style="PADDING-LEFT:15px;PADDING-RIGHT:15px;PADDING-TOP:15px;PADDING-bottom:15px;"><table width="72%" 
               border="0" align="center" cellpadding="2" cellspacing="1" class="font3">
-              <form name="form1" id="form1" action="http://www.tzweiyuan.com/__ROOT__/sendmail" method="post" enctype="multipart/form-data">
-                <input name="subject" type="hidden" value="在线订单：{$title}" />
-                <input name="to" type="hidden" value="Sales@tzweiyuan.com" />
-                <input name="reply" type="hidden" value="Sales@tzweiyuan.com" />
-                <input name="msg" type="hidden" value="OK" />
+              <form name="form1" id="form1" action="https://formspree.io/xjvrgqkd" method="post" enctype="multipart/form-data">
+                <input name="主题" type="hidden" value="在线订单"/>
+                <!--input name="to" type="hidden" value="Sales@tzweiyuan.com" /-->
+                <input name="来自" type="hidden" value="https://weiyuanhg.github.io" />
+                <!--input name="下单时间" id="msg" type="hidden" value="time" /-->
                 <tr> 
                   <td class="b14" width="19%" height="26"><p align="left" class="unnamed1">产品名称：</p></td>
-                  <td width="81%"><input size="38" name="产品名称"/></td>
+                  <td width="81%">
+                    <select name="产品名称" id="pro_name"  style="width:180px;">
+                      <option value="0">请选择产品 / CAS No.</option>
+                      <option value="间氯过氧苯甲酸 / 937-14-4">间氯过氧苯甲酸 / 937-14-4</option>
+                      <option value="对氯苯胺 / 106-47-8">对氯苯胺 / 106-47-8</option>
+                      <option value="对氯苯胺盐酸盐 / 20265-96-7">对氯苯胺盐酸盐 / 20265-96-7</option>
+                      <option value="L-(-)-二苯甲酰酒石酸（一水物）/ 62708-56-9">L-(-)-二苯甲酰酒石酸（一水物）/ 62708-56-9</option>
+                    </select>
+                  </td>
                 </tr>
+                <!--
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><p align="left">CAS号：</p></td>
-                  <td><input size="38" name="CAS号"/></td>
+                  <td><input size="38" name="CAS号" id="cas"/></td>
                 </tr>
+                -->
                 <tr> 
-                  <td class="unnamed1" align="right" height="26"><div align="left">求购数量：</div></td>
-                  <td><input size="38" name="求购数量"/></td>
+                  <td class="unnamed1" align="right" height="26"><div align="left">订购数量：</div></td>
+                  <td><input size="38" name="订购数量" id="num" value="  kg" /></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><div align="left">公司名称：</div></td>
-                  <td><input size="38" name="公司名称"/></td>
+                  <td><input size="38" name="公司名称" id="com"/></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><div align="left">联系人：</div></td>
-                  <td><input size="38" name="联系人"/></td>
+                  <td><input size="38" name="联系人" id="contact"/></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><div align="left">联系电话：</div></td>
-                  <td><input size="38" name="联系电话"/></td>
+                  <td><input size="38" name="联系电话" id="tel"/></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><div align="left">联系地址：</div></td>
-                  <td><input size="38" name="联系地址"/></td>
+                  <td><input size="38" name="联系地址" id="addr" /></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right" height="26"><div align="left">电子邮件：</div></td>
@@ -182,49 +192,17 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right"><div align="left">您的留言:</div></td>
-                  <td width="81%"><textarea name="您的留言" rows="4" cols="38"></textarea></td>
+                  <td width="81%"><textarea name="备注" id="comments" rows="6" cols="38" ></textarea></td>
                 </tr>
                 <tr> 
                   <td class="unnamed1" align="right"><div align="left">验证码：</div></td>
                   <td class="body12" align="right" colspan="2" height="30"><div align="left"> 
-                      <input type="text" name="captcha" size="8" id="captcha"/>
+                      <input type="text" name="验证码" size="8" id="captcha" />
                       <label id="code" style="cursor: pointer; width: 80px; height: 21px; font-size: 14px; text-align: center; color: #333; line-height: 21px; border: 1px solid red; margin: 100px auto;" title="点击刷新"></label>
                       <!-- <img style="cursor: pointer; position: relative; top: 6px;" title="点击刷新"src="verify" tppabs="http://www.tzweiyuan.com/verify" onclick="this.src='verify?t='+Math.random();">  -->
-                      <input name="submit" type="submit" onclick="if(document.getElementById('captcha').value==''){alert('请输入验证码'); return false;}" value="提交"/>
+                      <input name="button" id="button" type="button" onclick="validate()" value="提交"/>
                       &nbsp; </div></td>
                 </tr>
-                // 生成随机验证码
-                <script>
-                  var codeStr = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                  var oDiv = document.getElementById('code');
-                  // 用来生成随机整数
-                  function getRandom(n, m) { // param: (Number, Number)
-                      n = Number(n);
-                      m = Number(m);
-                      // 确保 m 始终大于 n
-                      if (n > m) {
-                          var temp = n;
-                          n = m;
-                          m = temp;
-                      }
-                      return Math.floor(Math.random()*(m - n) + n);
-                  }
-                  // 将随机生成的整数下标对应的字母放入div中
-                  function getCode() {
-                      var str = '';
-                      // 验证码有几位就循环几次
-                      for (var i = 0;i < 4;i ++) {
-                          var ran = getRandom(0, 62);
-                          str += codeStr.charAt(ran);
-                      }
-                      oDiv.innerHTML = str;
-                  }
-                  getCode();// 调用函数，页面刷新也会刷新验证码
-                  // 点击刷新验证码
-                  oDiv.onclick = function(){
-                      getCode();
-                  }
-                  </script>
             
               </FORM>
             </table>
@@ -251,7 +229,133 @@ document.write('<embed src="images/bcastr31.swf" wmode="opaque" FlashVars="bcast
 </table><map name="Map11">
   <area shape="rect" coords="787,52,852,84" href="about.html" tppabs="http://www.tzweiyuan.com/about.html">
   <area shape="rect" coords="874,57,973,86" href="abouten.html" tppabs="http://www.tzweiyuan.com/abouten.html"></map>
+// 生成随机验证码
+<script>
+  var codeStr = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  var oDiv = document.getElementById('code');
+  // 用来生成随机整数
+  function getRandom(n, m) { // param: (Number, Number)
+      n = Number(n);
+      m = Number(m);
+      // 确保 m 始终大于 n
+      if (n > m) {
+          var temp = n;
+          n = m;
+          m = temp;
+      }
+      return Math.floor(Math.random()*(m - n) + n);
+  }
+  // 将随机生成的整数下标对应的字母放入div中
+  function getCode() {
+      var str = '';
+      // 验证码有几位就循环几次
+      for (var i = 0;i < 4;i ++) {
+          var ran = getRandom(0, 62);
+          str += codeStr.charAt(ran);
+      }
+      oDiv.innerHTML = str;
+  }
+  getCode();// 调用函数，页面刷新也会刷新验证码
+  // 点击刷新验证码
+  oDiv.onclick = function(){
+      getCode();
+  }
+  </script>
+// 对用户输入的表单信息进行校验
+<script>
+  function validate(){
+  
+    var index=pro_name.selectedIndex;
+    //var cas=document.forms[0].cas.value;
+    var num=document.forms[0].num.value;
+    var com=document.forms[0].com.value;
+    var name=document.forms[0].contact.value;
+    var email=document.forms[0].email.value;
+    var tel = document.forms[0].tel.value;
+    var addr = document.forms[0].addr.value;
+    var captcha=document.forms[0].captcha.value;
 
+    if(index == 0){
+      alert('请选择产品名称！');
+      document.form1.pro_name.focus();
+      return false;	
+    }
+    /*
+    else if(cas == ''){
+      alert('请添加CAS号！');
+      document.form1.cas.focus();
+      return false;	
+    }
+    */
+    else if(num == ''){
+      alert('请添加求购数量！');
+      document.form1.num.focus();
+      return false;	
+    }
+    else if(com == ''){
+      alert('请添加公司名称！');
+      document.form1.com.focus();
+      return false;	
+    }
+    else if(name == ''){
+      alert('请添加联系人！');
+      document.form1.contact.focus();
+      return false;	
+    }
+    else if(tel == ''){
+      alert('请添加联系电话！');
+      document.form1.tel.focus();
+      return false;	
+    }
+    else if(!tel.match(/^(\+?\d{2,4})\-?(\d{3,11})$/)){
+      alert('电话格式错误！');
+      document.form1.tel.focus();
+      return false;	
+    }
+    else if(addr == ''){
+      alert('请添加联系地址！');
+      document.form1.addr.focus();
+      return false;	
+    }
+    else if(email == ''){
+      alert("请添加电子邮箱！");
+      document.form1.email.focus()
+      return false;
+    }
+    else if(!email.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/))
+    {
+      alert("邮箱格式错误！");
+      document.form1.email.focus()
+      return false;
+    }
+    else if(captcha == ''){
+      alert('请添加验证码！');
+      document.form1.captcha.focus();
+      return false;	
+    }
+    else if(captcha.toUpperCase() == oDiv.innerHTML.toUpperCase()) 
+      document.forms[0].submit();      
+    else {
+      alert('验证码错误，请重试！');
+      document.form1.captcha.focus();
+      return false;      
+    }    
+  }	
+
+</script>
+
+<script>
+/*  
+  var date = new Date();//<!--获得日期数据-->
+  var y = date.getFullYear();//<!--年-->
+  var m = date.getMonth()+1;//<!--月，这里的月份必须要+1才是当前月份-->
+  var d = date.getDate(); //<!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
+  var h = now.getHours();//得到小时
+  var m = now.getMinutes();//得到分钟
+  var s = now.getSeconds();//得到秒
+  var time = document.getElementById("msg").innerHTML = y+"-"+m+"-"+d+" "+h+":"+m+":"+s;
+*/
+</script>
 
 </body>
 </html>
